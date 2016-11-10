@@ -1,15 +1,3 @@
-export JAVA_HOME=/Library/Java/Home
-export ANDROID_HOME="/Users/dlatimer/Library/Android/sdk/platform-tools"
-export PATH=$PATH:$ANDROID_HOME
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH=$PATH:$JAVA_HOME/bin
-export PATH=$PATH:/usr/local/bin
-
-export PIP_REQUIRE_VIRTUALENV=true
-export WORKON_HOME=$HOME/envs
-export VIRTUALENVWRAPPER_PYTHON=`which python3`
-source /usr/local/bin/virtualenvwrapper.sh
-
 alias gd="printf \"=========== CHANGE LIST ===========\\n\";git s;printf \"\\n=============== LOG ===============\\n\";git l;printf \"\\n=========== BRANCH LIST ===========\\n\";git bv;"
 
 # DEV ENV STUFF

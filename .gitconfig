@@ -1,7 +1,5 @@
-[% USERNAME % "% EMAIL %"]
-	com = % WORK EMAIL %
-[credential]
-	helper = osxkeychain
+[danlatimer "daniel.latimer@trackgrp.com"]
+	com = daniel.latimer@trackgrp.com
 
 [alias]
 	dt = difftool
