@@ -1,6 +1,18 @@
-[danlatimer "daniel.latimer@trackgrp.com"]
-	com = daniel.latimer@trackgrp.com
-
+[core]
+	autocrlf = true
+	preloadindex = true
+	fscache = true
+	editor = vim
+[user]
+	email = daniel.latimer@trackgrp.com
+	name = Daniel Latimer
+[gui]
+	recentrepo = C:/Users/daniel.latimer/src/intellitrack-service
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
 [alias]
 	dt = difftool
 	l = !git --no-pager log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 10
@@ -15,25 +27,29 @@
 	heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
 	d = branch -D
 	count = rev-list --left-right --count
+	co = checkout
+	br = branch
+	chuck = !"git add -A; git reset --hard HEAD"
 [color]
 	ui = auto
 
-[aiotv]
-	skip-pylint = false
-[user]
-	email = daniellatimer@gmail.com
 [rerere]
-	enabled = true
+	enabled = false
 [push]
 	default = nothing
 [diff]
-    tool = bc
+    tool = bc3
 [difftool]
-    bc = trustExitCode
     prompt = false
+[difftool "bc3"]
+    cmd = \"/c/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\"
+    bc = trustExitCode	
 [merge]
-    tool = bc
+    tool = bc3
 [mergetool]
-    bc = trustExitCode
-    keepBackup = false
     prompt = false
+    keepBackup = false
+[mergetool "bc3"]
+    cmd = \"/c/Program Files/Beyond Compare 4/BComp.exe\" -automerge -ignoreunimportant -reviewconflicts \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    trustExitCode = true
+
