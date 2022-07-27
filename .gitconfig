@@ -1,18 +1,8 @@
 [core]
-	autocrlf = true
-	preloadindex = true
-	fscache = true
-	editor = vim
+	editor = \"C:\\Users\\daniel.latimer\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
 [user]
-	email = daniel.latimer@trackgrp.com
-	name = Daniel Latimer
-[gui]
-	recentrepo = C:/Users/daniel.latimer/src/intellitrack-service
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+	name = Dan Latimer
+	email = daniellatimer@gmail.com
 [alias]
 	dt = difftool
 	l = !git --no-pager log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 10
@@ -30,9 +20,8 @@
 	co = checkout
 	br = branch
 	chuck = !"git add -A; git reset --hard HEAD"
-[color]
-	ui = auto
-
+	f = fetch origin
+	clearvs = clean -dX -f -- 'TG*/bin' 'TG*/obj'
 [rerere]
 	enabled = false
 [push]
@@ -52,4 +41,8 @@
 [mergetool "bc3"]
     cmd = \"/c/Program Files/Beyond Compare 4/BComp.exe\" -automerge -ignoreunimportant -reviewconflicts \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
     trustExitCode = true
-
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
